@@ -1,0 +1,23 @@
+{
+  "name": "uptime-webhooks",
+  "version": "0.0.1",
+  "description": "A webhooks plugin for Uptime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mintbridge/uptime-webhooks.git"
+  },
+  "keywords": [
+    "uptime",
+    "webhooks"
+  ],
+  "author": {
+    "name": "Paul Dixon",
+    "email": "paul.dixon@mintbridge.co.uk"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
