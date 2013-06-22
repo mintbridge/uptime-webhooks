@@ -1,12 +1,26 @@
 Uptime Webhooks plugin
+======================
 
-This Uptime (https://github.com/fzaninotto/uptime) plugin notifies all configured events (up, down, paused, restarted) by sending a HTTP POST request to the given URL. The request will have a JSON payload of data from the event. Each event can have multiple hook URL's
+This Uptime (https://github.com/fzaninotto/uptime) plugin notifies all configured events (up, down, paused, restarted) by sending a HTTP POST request to the given URL. The request will have a JSON payload of data from the event. Each event can have multiple hook URL's.
 
-To use the plugin first install it using: ```npm install uptime-webhooks```. Then to enable it, add it to your Uptime plugins config, see the example below:
+To use the plugin, first install it using npm while in the Uptime directory:
 
-Example configuration
-
+```sh
+$ npm install uptime-webhooks
 ```
+
+Then to enable it, add it to the `plugins/index.js`, as follows:
+
+```js
+// in plugins/index.js
+exports.init = function() {
+  require('webhooks').init();
+}
+```
+
+Customize the plugin settings in the `config/production.yaml` configuration file, as in the example below:
+
+```yaml
 plugins:
   webhooks:
     event:
