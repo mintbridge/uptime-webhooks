@@ -24,6 +24,7 @@
  */
 
 var http       = require('http');
+var https      = require('https');
 var url        = require('url');
 var util       = require('util');
 var config     = require('config');
@@ -49,12 +50,13 @@ exports.init = function() {
 
         hrefs.forEach(function(href) {
             var options = url.parse(href);
+            var connection = options.protocol.indexOf('https') > -1 ? https : http;
             options.method = 'POST';
             options.headers = {
                 'Content-Type' : 'application/json'
             };
 
-            var req = http.request(options, function(res) {
+            var req = connection.request(options, function(res) {
 
             });
 
